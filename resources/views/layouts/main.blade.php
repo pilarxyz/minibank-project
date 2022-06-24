@@ -27,7 +27,7 @@
             @include('layouts.partials.side-bar-admin')
         @elseif($title == "Teller")
             @include('layouts.partials.side-bar-teller')
-        @elseif($title == "Customer Service")
+        @elseif($title == "CustomerService")
             @include('layouts.partials.side-bar-cs')
         @else
             @include('layouts.partials.side-bar')

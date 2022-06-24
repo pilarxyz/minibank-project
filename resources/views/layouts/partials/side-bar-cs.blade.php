@@ -19,8 +19,8 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Customer Service Menu :</h6>
-                <a class="collapse-item" href="{{ url('/cs')}}">Customer Data</a>
-                <a class="collapse-item" href="{{ url('/cs-create')}}">Create Account</a>
+                <a class="collapse-item" href="{{ url('/cs/home')}}">Customer Data</a>
+                <a class="collapse-item" href="{{ route('cs.create')}}">Create Account</a>
                 <div class="collapse-divider"></div>
             </div>
         </div>

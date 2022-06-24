@@ -44,18 +44,6 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function csHome()
-    {
-        return view('cs.csHome', [
-            "title" => "Customer Service"
-        ]);
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function adminHome()
     {   
         $employees = User::where('type','1')->orWhere('type','2')->orWhere('type','3')->get();

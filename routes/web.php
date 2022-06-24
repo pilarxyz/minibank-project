@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CustomerServiceController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TellerController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,9 +42,9 @@ All Teller Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:teller'])->group(function () {
   
-    Route::get('/teller/home', [HomeController::class, 'tellerHome'])->name('teller.home');
+    Route::get('/teller/home', [TellerController::class, 'index'])->name('teller.home');
+    Route::get('/teller/balance', [TellerController::class, 'balance'])->name('teller.balance');
 });
-  
 /*------------------------------------------
 --------------------------------------------
 All Customer Service Routes List
@@ -49,7 +52,8 @@ All Customer Service Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:cs'])->group(function () {
   
-    Route::get('/cs/home', [HomeController::class, 'csHome'])->name('cs.home');
+    Route::get('/cs/home', [CustomerServiceController::class, 'index'])->name('cs.home');
+    Route::get('/cs/create', [CustomerServiceController::class, 'create'])->name('cs.create');
 });
 /*------------------------------------------
 --------------------------------------------
@@ -58,13 +62,11 @@ All Admin Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
   
-    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
-    Route::get('/admin/create', [EmployeeController::class,'create'])->name('admin.create');
-    Route::get('/admin/config', [EmployeeController::class,'config'])->name('admin.config');
+    Route::get('/admin/home', [AdminController::class, 'index'])->name('admin.home');
+    Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
+    Route::get('/admin/config', [AdminController::class, 'config'])->name('admin.config');
     Route::post('/admin/store', [EmployeeController::class, 'store'])->name('admin.store');
 
 });
-
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

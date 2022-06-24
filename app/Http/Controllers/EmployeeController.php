@@ -16,20 +16,7 @@ class EmployeeController extends Controller
     {
         $this->middleware('auth');
     }
-    public function create()
-    {
-        return view('admin.adminCreate', [
-            "title" => "Admin"
-        ]);
-    }
-
-    public function config()
-    {
-        return view('admin.adminConfig', [
-            "title" => "Admin"
-        ]);
-    }
-
+    
     public function store(Request $request)
     {   
         User::create([
