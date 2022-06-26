@@ -28,7 +28,7 @@ class CustomerServiceController extends Controller
     {
         $users = DB::table('users')
         ->join('nasabahs', 'users.id', '=', 'nasabahs.user_id')
-        ->select('users.id', 'users.name', 'nasabahs.nik', 'nasabahs.address', 'nasabahs.born_place', 'nasabahs.phone')
+        ->select('users.id', 'users.name', 'nasabahs.nik', 'nasabahs.gender','nasabahs.address', 'nasabahs.born_place', 'nasabahs.phone', 'nasabahs.born_date', 'nasabahs.job')
         ->get();
         
         return view('cs.csHome', [
@@ -56,10 +56,11 @@ class CustomerServiceController extends Controller
         $nasabah = Nasabah::create([
             'user_id' => $user,
             'address' => $request['address'],
+
             'phone' => $request['phone'],
             'nik' => $request['nik'],
             'no_rek' => $request['no_rek'],
-           // 'jenis_kelamin' => $request['jenis_kelamin'],
+            'gender' => $request['gender'],
             'born_date' => $request['born_date'],
             'born_place' => $request['born_place'],
             'job' => $request['job'],
@@ -89,19 +90,18 @@ class CustomerServiceController extends Controller
     {
         $user = User::find($id);
         $user->name = $request['name'];
-        $user->email = $request['email'];
-        $user->password = bcrypt($request['password']);
         $user->save();
         
         $nasabah = Nasabah::where('user_id', $id)->first();
         $nasabah->address = $request['address'];
+        $nasabah->gender = $request['gender'];
         $nasabah->phone = $request['phone'];
         $nasabah->nik = $request['nik'];
         $nasabah->born_place = $request['born_place'];
         $nasabah->born_date = $request['born_date'];
         $nasabah->job = $request['job'];
         $nasabah->save();
-        return redirect('cs');
+        return redirect('cs/home');
     }
 
     public function destroy($id)
