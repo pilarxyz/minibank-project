@@ -12,6 +12,7 @@ class Nasabah extends Model
     protected $fillable = [
         'user_id',
         'address',
+        'gender',
         'nik',
         'born_place',
         'born_date',
@@ -30,5 +31,5 @@ class Nasabah extends Model
         return $this->hasOne(User::class);
     }
 
-    
+
 }
