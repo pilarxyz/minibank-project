@@ -70,47 +70,25 @@
                             </td>
                         </tr> --}}
                         <tr>
+                            <td>1</td>
                             <td>Rika Nuraini</td>
                             <td>5246962257416887</td>
                             <td>Karanganyar</td>
-                            <td>11/02/2015</td>
-                            <td>76250000</td>
+                            <td>Perempuan</td>
                             <td>
-                                <a href="#" class="btn btn-danger btn-icon-split">
+                                <a href="#" class="btn btn-danger btn-icon-split" 
                                     <span class="icon text-white-50">
                                         <i class="fas fa-trash"></i>
                                     </span>
                                     <span class="text">Delete</span>
                                 </a>
+
                                 <a href="#" class="btn btn-primary btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-flag"></i>
                                     </span>
                                     <span class="text">Edit</span>
                                 </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Betania Mardhiyah</td>
-                            <td>5344632843072665</td>
-                            <td>Klaten</td>
-                            <td>09/02/20</td>
-                            <td>102312000</td>
-                            <td>
-                                <a href="#" class="btn btn-danger btn-icon-split">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-trash"></i>
-                                    </span>
-                                    <span class="text">Delete</span>
-                                </a>
-                                <a href="#" class="btn btn-primary btn-icon-split">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-flag"></i>
-                                    </span>
-                                    <span class="text">Edit</span>
-                                </a>
-                            </td>
-                        </tr>
                         {{-- @endforeach --}}
                     </tbody>
                 </table>
