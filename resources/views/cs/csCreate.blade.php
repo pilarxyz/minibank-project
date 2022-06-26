@@ -21,6 +21,21 @@
                 </div>
                 <div class="row mb-4">
                     <div class="col-2">
+                        <label for="">Jenis Kelamin</label>
+                    </div>
+                    <div class="col-10">
+                        <div class="input-group">
+                            <select required name="gender" class="form-control bg-light border-0 small">
+                                <option selected> Pilih Jenis Kelamin</option>
+                                <option value="Laki laki">Laki laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-2">
                         <label for="">Alamat Email</label>
                     </div>
                     <div class="col-10">
@@ -45,7 +60,7 @@
                     </div>
                     <div class="col-10">
                         <div class="input-group">
-                            <input type="text" required name="phone" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="number" required name="phone" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
                         </div>
                     </div>
                 </div>
