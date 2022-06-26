@@ -37,6 +37,17 @@
                             <th>Action</th>
                         </tr>
                     </thead>
+                    <tfoot>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>NIK</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Alamat</th>
+                            <th>Phone</th>
+                            <th>Action</th>
+                        </tr>
+                    </tfoot>
                     <tbody>
                         @foreach ($users as $nasabah)
                         <tr>
@@ -69,8 +80,7 @@
 
                                 
                             </td>
-                        </tr> 
-                        <tr>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
