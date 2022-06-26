@@ -71,7 +71,7 @@
                                 <form method="POST" action="{{ url('admin/' . $employee->id) }}" accept-charset="UTF-8" style="display:inline">
                                     {{ method_field('DELETE') }}
                                     {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-danger btn-icon-split" title="Delete" onclick="return confirm(&quot;Confirm delete?&quot;)">
+                                    <button type="submit" class="btn btn-danger btn-icon-split" title="Delete" onclick="return confirm('Hapus data ini?')">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-trash"></i>
                                         </span>
