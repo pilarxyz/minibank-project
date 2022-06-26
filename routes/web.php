@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ConfigAdminController;
 use App\Http\Controllers\CustomerServiceController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TellerController;
+use App\Models\ConfigAdmin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +22,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $id = 1;
+    $config = ConfigAdmin::find($id);
+    return view('welcome')->with('config', $config);
 });
 
 Auth::routes();
@@ -64,8 +68,12 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
   
     Route::get('/admin/home', [AdminController::class, 'index'])->name('admin.home');
     Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
-    Route::get('/admin/config', [AdminController::class, 'config'])->name('admin.config');
-    Route::post('/admin/store', [EmployeeController::class, 'store'])->name('admin.store');
+    Route::post('/admin/store', [AdminController::class, 'store'])->name('admin.store');
+    Route::post("/admin/{id}", [AdminController::class, 'update'])->name('admin.update');
+    Route::delete("/admin/{id}", [AdminController::class, 'destroy'])->name('admin.destroy');
+    
+    Route::get('/admin/config', [ConfigAdminController::class, 'index'])->name('admin.config');
+    Route::post("/admin/{id}", [ConfigAdminController::class, 'update'])->name('admin.config.update');
 
 });
 

@@ -37,12 +37,37 @@ class AdminController extends Controller
             "title" => "Admin"
         ]);
     }
-
-    public function config()
-    {
-        return view('admin.adminConfig', [
-            "title" => "Admin"
+    public function store(Request $request)
+    {   
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
+            'type' => $request['type'],
         ]);
+        return redirect('admin/home');
+    }
+
+    public function edit($id)
+    {
+        $employee = User::find($id);
+        return view('admin.adminEdit', [
+            "title" => "Admin"
+        ])->with('employee', $employee);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $employee = User::find($id);
+        $input = $request->all();
+        $employee->update($input);
+        return redirect('admin/home');
+    }
+
+    public function destroy($id)
+    {
+        User::destroy($id);
+        return redirect('admin/home');
     }
 
 }

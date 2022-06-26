@@ -164,9 +164,8 @@
                     <img src="https://cdn.discordapp.com/attachments/785538389566029844/975911239882514452/ic_map.png" alt="" width="25" height="25">
                 </div>
                 <div class="text" align="left">
-                    <h5> Jl. Jenderal Sudirman <br>
-                        Surakarta 10215 <br>
-                        Indonesia <br>
+                    <h5>
+                        {{ $config->address }} 
                     </h5>
                 </div>
             </div>
@@ -177,8 +176,8 @@
                     <a href="#"><img src="https://cdn.discordapp.com/attachments/785538389566029844/975911242122285076/ic_gmail.png" alt="" width="25" height="20"></a> 
                 </div>
                 <div class="text" align="left">
-                    <h5> 13518 / 1523049 </h5> <br>
-                    <h5> callmini@bankmini.co.id </h5>
+                    <h5> {{ $config->contact }} </h5> <br>
+                    <h5> {{ $config->email }}  </h5>
                 </div>
             </div>
             <div class="col-12 col-lg-4" align="left">
@@ -204,7 +203,7 @@
     <div class="container">
         <div class="row" align="center">
             <div class="col">
-                © 2022 PT.Bank Mini. | All Rights Reserved.
+                © 2022 PT.{{ $config->name }}. | All Rights Reserved.
             </div>
         </div>
     </div>
