@@ -13,19 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nasabah', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
+        Schema::create('nasabahs', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constranted();
+            // $table->foreign('name')->references('name')->on('users');
+            // $table->foreign('email')->references('email')->on('users');
             $table->string('phone');
+            $table->string('nik');
+            $table->string('born_place');
+            $table->date('born_date');
             $table->string('address');
-            $table->string('city');
-            $table->string('province');
-            $table->string('country');
-            $table->string('postal_code');
-            $table->string('photo');
-            $table->string('status');
+            $table->string('job');
             $table->string('remember_token')->nullable();
             $table->timestamps();
         });
@@ -38,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('nasabah');
     }
 };

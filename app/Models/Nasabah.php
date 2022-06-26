@@ -10,10 +10,14 @@ class Nasabah extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'type',
+        'user_id',
+        'address',
+        'nik',
+        'born_place',
+        'born_date',
+        'phone',
+        'job',
+
     ];
 
     protected $hidden = [
@@ -21,13 +25,10 @@ class Nasabah extends Model
         'remember_token',
     ];
 
-    public function getJson()
+    public function user()
     {
-        return json_encode([
-            'id' => $this->id,
-            'name' => $this->name,
-            'email' => $this->email,
-            'type' => $this->type,
-        ]);
+        return $this->hasOne(User::class);
     }
+
+    
 }

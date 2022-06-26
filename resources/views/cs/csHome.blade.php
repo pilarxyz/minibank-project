@@ -32,7 +32,7 @@
                             <th>Name</th>
                             <th>NIK</th>
                             <th>Address</th>
-                            <th>Gender</th>
+                            <th>Phone</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -42,54 +42,44 @@
                             <th>Name</th>
                             <th>NIK</th>
                             <th>Address</th>
-                            <th>Gender</th>
+                            <th>Phone</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
-                        {{-- @foreach ($nasabahs as $nasabah)
+                        @foreach ($users as $nasabah)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $nasabah->nama }}</td>
+                            <td>{{ $nasabah->name }}</td>
                             <td>{{ $nasabah->nik }}</td>
-                            <td>{{ $nasabah->alamat }}</td>
-                            <td>{{ $nasabah->jenis_kelamin }}</td>
+                            <td>{{ $nasabah->address }}</td>
+                            <td>{{ $nasabah->phone }}</td>
                             <td>
-                                <a href="#" class="btn btn-danger btn-icon-split">
+                            <a href= "{{ route('cs.edit', $nasabah->id) }}" class="btn btn-info btn-icon-split">
                                     <span class="icon text-white-50">
-                                        <i class="fas fa-trash"></i>
+                                        <i class="fas fa-info"></i>
                                     </span>
-                                    <span class="text">Delete</span>
+                                    <span class="text">Detail</span>
                                 </a>
-                                <a href="#" class="btn btn-primary btn-icon-split">
+
+                                <a href="{{ route('cs.edit', $nasabah->id) }}" class="btn btn-primary btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-flag"></i>
                                     </span>
                                     <span class="text">Edit</span>
                                 </a>
-                            </td>
-                        </tr> --}}
-                        <tr>
-                            <td>1</td>
-                            <td>Rika Nuraini</td>
-                            <td>5246962257416887</td>
-                            <td>Karanganyar</td>
-                            <td>Perempuan</td>
-                            <td>
-                                <a href="#" class="btn btn-danger btn-icon-split" 
+                                <a href="{{ route('cs.destroy', $nasabah->id) }}" class="btn btn-danger btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-trash"></i>
                                     </span>
                                     <span class="text">Delete</span>
                                 </a>
 
-                                <a href="#" class="btn btn-primary btn-icon-split">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-flag"></i>
-                                    </span>
-                                    <span class="text">Edit</span>
-                                </a>
-                        {{-- @endforeach --}}
+                                
+                            </td>
+                        </tr> 
+                        <tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

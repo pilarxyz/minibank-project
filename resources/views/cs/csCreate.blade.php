@@ -7,14 +7,15 @@
             <h6 class="m-0 font-weight-bold text-primary">Create Account</h6>
         </div>
         <div class="card-body">
-            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 navbar-search col-12">
+            <form action="{{ url('cs/store') }}" method="post" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 navbar-search col-12">
+                {!! csrf_field() !!}
                 <div class="row mb-4">
                     <div class="col-2">
                         <label for="">Nama Lengkap</label>
                     </div>
                     <div class="col-10">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" required name="name" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
                         </div>
                     </div>
                 </div>
@@ -24,7 +25,37 @@
                     </div>
                     <div class="col-10">
                         <div class="input-group">
-                            <input type="email" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="email" required name="email" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-2">
+                        <label for="">Password</label>
+                    </div>
+                    <div class="col-10">
+                        <div class="input-group">
+                            <input type="text" required name="password" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-2">
+                        <label for="">Nomor Telepon</label>
+                    </div>
+                    <div class="col-10">
+                        <div class="input-group">
+                            <input type="text" required name="phone" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-2">
+                        <label for="">NIK</label>
+                    </div>
+                    <div class="col-10">
+                        <div class="input-group">
+                            <input type="number" required name="nik" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
                         </div>
                     </div>
                 </div>
@@ -34,7 +65,7 @@
                     </div>
                     <div class="col-10">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" required name=born_place class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
                         </div>
                     </div>
                 </div>
@@ -44,17 +75,17 @@
                     </div>
                     <div class="col-10">
                         <div class="input-group">
-                            <input type="date" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="date" required name="born_date" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
                         </div>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <div class="col-2">
-                        <label for="">Alamat Domisili</label>
+                        <label for="">Alamat</label>
                     </div>
                     <div class="col-10">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" required name="address" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
                         </div>
                     </div>
                 </div>
@@ -64,7 +95,7 @@
                     </div>
                     <div class="col-10">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" required name="job" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
                         </div>
                     </div>
                 </div>
@@ -72,7 +103,7 @@
                     <div class="col-10">&nbsp;</div>
                     <div class="col-2">
                         <div class="input-group">
-                            <button class="btn btn-primary btn-icon-split">
+                            <button onsubmit="alertSuccess()" class="btn btn-primary btn-icon-split">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-arrow-right"></i>
                                 </span>
@@ -85,3 +116,9 @@
         </div>
     </div>
 @endsection
+
+<script>
+    const alertSuccess = () => {
+        alert('Berhasil menambahkan data');
+    }
+</script>
