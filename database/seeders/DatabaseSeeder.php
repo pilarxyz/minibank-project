@@ -8,6 +8,7 @@ use App\Models\User;
 use Database\Factories\NasabahFactory;
 use Database\Factories\RekeningFactory;
 use Database\Factories\TransferFactory;
+use Database\Factories\TunaiFactory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,7 +29,9 @@ class DatabaseSeeder extends Seeder
         NasabahFactory::new()->count(10)->create();
         RekeningFactory::new()->count(10)->create();
         TransferFactory::new()->count(100)->create();
-
+        TunaiFactory::new()->count(100)->create();
+        $this->call(RekeningSeeder::class);
+        $this->call(NasabahSeeder::class);
         $this->call(CreateUsersSeeder::class);
         $this->call(ConfigAdminSeeder::class);
     }

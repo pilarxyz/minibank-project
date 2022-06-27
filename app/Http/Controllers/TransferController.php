@@ -42,8 +42,6 @@ class TransferController extends Controller
         return $transfers;
     }
 
-    public function getBankTransfer() {
-    }
 
     /**
      * Show the form for creating a new resource.
