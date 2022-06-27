@@ -12,6 +12,7 @@ class ConfigAdmin extends Model
         'name',
         'address',
         'email',
-        'contact'
+        'contact',
+        'logo'
     ];
 }

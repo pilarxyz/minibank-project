@@ -25,9 +25,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        NasabahFactory::new()->count(10)->create();
-        RekeningFactory::new()->count(10)->create();
-        TransferFactory::new()->count(100)->create();
+        // NasabahFactory::new()->count(10)->create();
+        // RekeningFactory::new()->count(10)->create();
+        // TransferFactory::new()->count(100)->create();
 
         $this->call(CreateUsersSeeder::class);
         $this->call(ConfigAdminSeeder::class);

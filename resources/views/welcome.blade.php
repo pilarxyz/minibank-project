@@ -16,7 +16,8 @@
 <nav class="py-4 navbar navbar-expand-lg navbar-light">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="https://cdn.discordapp.com/attachments/785538389566029844/975911245112836116/Logo.png" width="187" alt="">
+            {{-- <img src="https://cdn.discordapp.com/attachments/785538389566029844/975911245112836116/Logo.png" width="187" alt=""> --}}
+            <img src="{{ Storage::url($config->logo) }}" width="187" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
