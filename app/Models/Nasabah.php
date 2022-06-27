@@ -31,5 +31,10 @@ class Nasabah extends Model
         return $this->hasOne(User::class);
     }
 
+    public function rekenings()
+    {
+        return $this->hasOne(Rekening::class);
+    }
+
 
 }

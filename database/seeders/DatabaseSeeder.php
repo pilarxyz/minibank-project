@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use Database\Factories\NasabahFactory;
+use Database\Factories\RekeningFactory;
+use Database\Factories\TransferFactory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,12 +18,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        NasabahFactory::new()->count(10)->create();
+        RekeningFactory::new()->count(10)->create();
+        TransferFactory::new()->count(100)->create();
 
         $this->call(CreateUsersSeeder::class);
         $this->call(ConfigAdminSeeder::class);

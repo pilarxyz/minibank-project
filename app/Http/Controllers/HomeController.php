@@ -24,7 +24,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $nasabah = new NasabahController;
+        $users = $nasabah->index();
+
+        $transfer = new TransferController;
+        $transfers = $transfer->getNasabahTransfer();
+        // dd($transfers, $users);
+        return view('home', [
+            "title" => "Home",
+            "users" => $users[0],
+            "transfers" => $transfers
+        ]);
     } 
    
     /**

@@ -19,8 +19,8 @@ return new class extends Migration
             // $table->foreign('name')->references('name')->on('users');
             // $table->foreign('email')->references('email')->on('users');
             $table->string('gender');
-            $table->bigInteger('phone');
-            $table->bigInteger('nik');
+            $table->string('phone');
+            $table->string('nik');
             $table->string('born_place');
             $table->date('born_date');
             $table->string('address');

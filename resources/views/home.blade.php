@@ -41,16 +41,16 @@
                         <div class="card-body">
                             <table class="table">
                                 <tr>
-                                    <th>Nomor Rekening</th>
                                     <th>Nama</th>
-                                    <th>Periode</th>
-                                    <th>Mata Uang</th>
+                                    <th>Nomor Rekening</th>
+                                    <th>Jenis Rekening</th>
+                                    <th>Jumlah Saldo</th>
                                 </tr>
                                 <tr>
-                                    <td>33232934743</td>
-                                    <td>Tristan Hans Pratama</td>
-                                    <td>17/09/2019 - 17/09/2022</td>
-                                    <td>IDR</td>
+                                    <td>{{$users->name}}</td>
+                                    <td>{{$users->no_rekening}}</td>
+                                    <td>{{$users->jenis_rekening}}</td>
+                                    <td>Rp{{$users->saldo}}</td>
                                 </tr>
                             </table>
                         </div>
@@ -68,63 +68,30 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>Pengirim</th>
+                                    <th>Penerima</th>
+                                    <th>Jenis Transaksi</th>
+                                    <th>Jumlah Transfer</th>
                                     <th>Tanggal</th>
-                                    <th>Keterangan</th>
-                                    <th>Debit</th>
-                                    <th>Kredit</th>
-                                    <th>Saldo Akhir</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($transfers as $transfer)
                                 <tr>
-                                    <td>2019/09/17</td>
-                                    <td>Setoran Tunai</td>
-                                    <td class="text-right">-</td>
-                                    <td class="text-right">300.000</td>
-                                    <td class="text-right">300.000</td>
+                                    <td>{{$transfer->pengirim}}</td>
+                                    <td>{{$transfer->penerima}}</td>
+                                    <td>{{$transfer->pengirim != $users->name ? "Debit" : "Kredit" }}</td>
+                                    <td>{{$transfer->jumlah}}</td>
+                                    <td>{{$transfer->created_at}}</td>
                                 </tr>
-                                <tr>
-                                    <td>2019/10/10</td>
-                                    <td>Setoran Tunai</td>
-                                    <td class="text-right">-</td>
-                                    <td class="text-right">500.000</td>
-                                    <td class="text-right">800.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2019/10/30</td>
-                                    <td>Penarikan Tunai</td>
-                                    <td class="text-right">200.000</td>
-                                    <td class="text-right">-</td>
-                                    <td class="text-right">600.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2019/11/03</td>
-                                    <td>Penarikan Tunai</td>
-                                    <td class="text-right">150.000</td>
-                                    <td class="text-right">-</td>
-                                    <td class="text-right">450.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2020/03/07</td>
-                                    <td>Setoran Tunai</td>
-                                    <td class="text-right">-</td>
-                                    <td class="text-right">1.500.000</td>
-                                    <td class="text-right">1.950.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2021/05/21</td>
-                                    <td>Setoran Tunai</td>
-                                    <td class="text-right">-</td>
-                                    <td class="text-right">1.000.000</td>
-                                    <td class="text-right">2.950.000</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
             <!-- Default Card Example -->
-            <div class="card shadow mb-4 text-center">
+            <!-- <div class="card shadow mb-4 text-center">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Detail Balance</h6>
                 </div>
@@ -144,7 +111,7 @@
                         </tr>
                     </table>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div> 

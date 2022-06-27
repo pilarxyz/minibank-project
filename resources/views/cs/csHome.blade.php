@@ -31,8 +31,8 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>NIK</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Alamat</th>
+                            <th>Nomor Rekening</th>
+                            <th>Jenis Rekening</th>
                             <th>Phone</th>
                             <th>Action</th>
                         </tr>
@@ -42,8 +42,8 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>NIK</th>
-                            <th>Jenis Kelamin</th>
-                            <th>Alamat</th>
+                            <th>Nomor Rekening</th>
+                            <th>Jenis Rekening</th>
                             <th>Phone</th>
                             <th>Action</th>
                         </tr>
@@ -54,8 +54,8 @@
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $nasabah->name }}</td>
                             <td>{{ $nasabah->nik }}</td>
-                            <td>{{ $nasabah->gender }}</td>
-                            <td>{{ $nasabah->address }}</td>
+                            <td>{{ $nasabah->no_rekening }}</td>
+                            <td>{{ $nasabah->jenis_rekening }}</td>
                             <td>{{ $nasabah->phone }}</td>
                             <td>
                             <a data-toggle="modal" data-target="#detailModal{{$nasabah->id}}" class="btn btn-info btn-icon-split">

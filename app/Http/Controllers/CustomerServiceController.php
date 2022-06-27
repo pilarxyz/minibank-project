@@ -28,9 +28,10 @@ class CustomerServiceController extends Controller
     {
         $users = DB::table('users')
         ->join('nasabahs', 'users.id', '=', 'nasabahs.user_id')
-        ->select('users.id', 'users.name', 'nasabahs.nik', 'nasabahs.gender','nasabahs.address', 'nasabahs.born_place', 'nasabahs.phone', 'nasabahs.born_date', 'nasabahs.job')
+        ->join('rekenings', 'nasabahs.id', '=', 'rekenings.nasabah_id')
+        ->select('users.id', 'users.name', 'nasabahs.nik', 'nasabahs.gender','nasabahs.address', 'nasabahs.born_place', 'nasabahs.phone', 'nasabahs.born_date', 'nasabahs.job', 'rekenings.no_rekening' , 'rekenings.jenis_rekening'
+        )
         ->get();
-        
         return view('cs.csHome', [
             "title" => "CustomerService",
             "users" => $users
