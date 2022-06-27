@@ -41,7 +41,13 @@ class HomeController extends Controller
             "tunai_transfer" => $tunai_transfer
         ]);
     } 
-   
+    public function transfer()
+    {
+        return view('userTransfer', [
+            "title" => "Home"
+        ]);
+    }
+
     /**
      * Show the application dashboard.
      *

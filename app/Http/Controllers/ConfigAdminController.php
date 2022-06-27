@@ -22,7 +22,7 @@ class ConfigAdminController extends Controller
         $employee = ConfigAdmin::find($id);
         if($request->has('logo')){
             $path = Storage::disk('public')->putFile('logo', $request->file('logo'));
-            $employee->foto = $path;
+            $employee->logo = $path;
         }
         $employee->name = $request['name'];
         $employee->address = $request['address'];

@@ -1,6 +1,6 @@
 @extends('layouts.main')
  
-@section('content')
+@section('container')
 {{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -24,13 +24,13 @@
 
 
 {{-- Start Content --}}
-<div id="content-wrapper" class="d-flex flex-column">
+{{-- <div id="content-wrapper" class="d-flex flex-column">
 
     <!-- Main Content -->
-    <div id="content">
+    <div id="content"> --}}
         
         <!-- Begin Page Content -->
-        <div class="container">
+        {{-- <div class="container-fluid"> --}}
             <div class="row">
                 <div class="col-12">
                     <!-- Default Card Example -->
@@ -61,37 +61,7 @@
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3 text-center">
-                    <h6 class="m-0 font-weight-bold text-primary">Nasabah Mutation</h6>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Nama Akun</th>
-                                    <th>Jenis Transaksi</th>
-                                    <th>Jumlah</th>
-                                    <th>Tanggal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($tunai_transfer as $tunai)
-                                <tr>
-                                    <td>{{$tunai->name}}</td>
-                                    <td>{{$tunai->jenis_transaksi}}</td>
-                                    <td>{{$tunai->jumlah}}</td>
-                                    <td>{{$tunai->created_at}}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow mb-4">
-                <div class="card-header py-3 text-center">
-                    <h6 class="m-0 font-weight-bold text-primary">Transfer Mutation</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Account Mutation</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -142,9 +112,9 @@
                     </table>
                 </div>
             </div> -->
-        </div>
-    </div>
-</div> 
+        {{-- </div> --}}
+    {{-- </div>
+</div>  --}}
 @endif
 
 @endsection

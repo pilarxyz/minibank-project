@@ -19,8 +19,8 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Teller Menu :</h6>
-                <a class="collapse-item" href="{{ url('/teller/home')}}">Account Mutation</a>
-                <a class="collapse-item" href="{{ url('/teller/balance')}}">Balance Management</a>
+                <a class="collapse-item" href="{{ url('/home')}}">Account Mutation</a>
+                <a class="collapse-item" href="{{ url('/transfer')}}">Transfer</a>
                 <div class="collapse-divider"></div>
             </div>
         </div>
