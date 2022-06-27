@@ -30,10 +30,15 @@ class HomeController extends Controller
         $transfer = new TransferController;
         $transfers = $transfer->getNasabahTransfer();
         // dd($transfers, $users);
+        $tunai = new TunaiController;
+        $tunai_transfer = $tunai->getTunaiTransfer();
+
+
         return view('home', [
             "title" => "Home",
             "users" => $users[0],
-            "transfers" => $transfers
+            "transfers" => $transfers,
+            "tunai_transfer" => $tunai_transfer
         ]);
     } 
    

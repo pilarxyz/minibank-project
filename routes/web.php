@@ -6,6 +6,7 @@ use App\Http\Controllers\CustomerServiceController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TellerController;
+use App\Http\Controllers\TunaiController;
 use App\Models\ConfigAdmin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -47,7 +48,7 @@ Route::middleware(['auth', 'user-access:teller'])->group(function () {
   
     Route::get('/teller/home', [TellerController::class, 'index'])->name('teller.home');
     Route::get('/teller/balance', [TellerController::class, 'balance'])->name('teller.balance');
-
+    Route::post('/user/withdraw', [TunaiController::class, 'balanceWithdrawal'])->name('user.withdraw');
 });
 /*------------------------------------------
 --------------------------------------------

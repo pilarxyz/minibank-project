@@ -7,7 +7,8 @@
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Balance Withdrawal</h6>
         </div>
-        <div class="card-body">
+        <form class="card-body" method="POST" action="{{ route('user.withdraw') }}">
+            @csrf
             <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 navbar-search col-12">
                 <div class="row mb-4">
                     <div class="col-2">
@@ -15,7 +16,7 @@
                     </div>
                     <div class="col-10">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" name="no_rekening" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
                         </div>
                     </div>
                 </div>
@@ -25,7 +26,7 @@
                     </div>
                     <div class="col-10">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" name="jumlah" class="form-control bg-light border-0 small" aria-label="Search" aria-describedby="basic-addon2">
                         </div>
                     </div>
                 </div>
@@ -43,7 +44,7 @@
                     </div>
                 </div>
             </form>
-        </div>
+        </form>
     </div>
 
 
