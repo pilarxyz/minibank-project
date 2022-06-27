@@ -31,7 +31,7 @@
         
         <!-- Begin Page Content -->
         {{-- <div class="container-fluid"> --}}
-            
+
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3 text-center">
@@ -55,7 +55,7 @@
                                     <td>{{$transfer->pengirim}}</td>
                                     <td>{{$transfer->penerima}}</td>
                                     <td>{{$transfer->pengirim != $users->name ? "Debit" : "Kredit" }}</td>
-                                    <td>{{$transfer->jumlah}}</td>
+                                    <td>Rp {{$transfer->jumlah}}</td>
                                     <td>{{$transfer->created_at}}</td>
                                 </tr>
                                 @endforeach

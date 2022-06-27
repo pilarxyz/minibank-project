@@ -50,7 +50,7 @@
                                     <td>{{$users->name}}</td>
                                     <td>{{$users->no_rekening}}</td>
                                     <td>{{$users->jenis_rekening}}</td>
-                                    <td>Rp{{$users->saldo}}</td>
+                                    <td>Rp {{$users->saldo}}</td>
                                 </tr>
                             </table>
                         </div>
@@ -68,7 +68,6 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Nama Akun</th>
                                     <th>Jenis Transaksi</th>
                                     <th>Jumlah</th>
                                     <th>Tanggal</th>
@@ -77,9 +76,8 @@
                             <tbody>
                                 @foreach($tunai_transfer as $tunai)
                                 <tr>
-                                    <td>{{$tunai->name}}</td>
                                     <td>{{$tunai->jenis_transaksi}}</td>
-                                    <td>{{$tunai->jumlah}}</td>
+                                    <td>Rp {{$tunai->jumlah}}</td>
                                     <td>{{$tunai->created_at}}</td>
                                 </tr>
                                 @endforeach

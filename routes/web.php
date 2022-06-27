@@ -51,8 +51,7 @@ All Teller Routes List
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:teller'])->group(function () {
   
-    Route::get('/teller/home', [TellerController::class, 'index'])->name('teller.home');
-    Route::get('/teller/balance', [TellerController::class, 'balance'])->name('teller.balance');
+    Route::get('/teller/home', [TellerController::class, 'balance'])->name('teller.balance');
     Route::post('/user/withdraw', [TunaiController::class, 'balanceWithdrawal'])->name('user.withdraw');
     Route::post('/user/deposit', [TunaiController::class, 'balanceDeposit'])->name('user.deposit');
 });

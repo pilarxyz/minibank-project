@@ -20,7 +20,7 @@ class NasabahFactory extends Factory
             'user_id' => $this->faker->numberBetween(1, 10),
             'address' => $this->faker->address,
             'gender' => $this->faker->randomElement(['Pria', 'Wanita']),
-            'phone' => $this->faker->phoneNumber(),
+            'phone' => $this->faker->numerify('08##########'),
             'nik' => $this->faker->nik(),
             'born_place' => $this->faker->city(),
             'born_date' => $this->faker->dateTimeBetween('-60 years', '-18 years'),
