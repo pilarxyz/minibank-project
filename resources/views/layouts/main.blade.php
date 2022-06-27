@@ -30,7 +30,7 @@
         @elseif($title == "CustomerService")
             @include('layouts.partials.side-bar-cs')
         @else
-            @include('layouts.partials.side-bar')
+            @include('layouts.partials.side-bar-user')
         @endif
 
         {{-- @include('layouts.partials.side-bar') --}}

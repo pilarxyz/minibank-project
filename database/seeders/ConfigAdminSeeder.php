@@ -21,7 +21,7 @@ class ConfigAdminSeeder extends Seeder
             'address' => 'Jl. Soekarno Hatta No.1',
             'email' => 'mycall@bankmini.com',
             'contact' => '088112099660',
-            'logo' => 'Logo.png'
+            'logo' => 'logo/Logo.png'
         ]);
     }
 }
