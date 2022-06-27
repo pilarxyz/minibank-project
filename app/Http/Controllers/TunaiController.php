@@ -54,6 +54,35 @@ class TunaiController extends Controller
 
         return redirect()->back()->with('success', 'Berhasil melakukan tarik tunai');
     }
+
+    public function balanceDeposit(Request $request) {
+        $balance = DB::table('rekenings')
+        ->where('no_rekening', '=', $request->no_rekening)
+        ->select('saldo')
+        ->get();
+
+        $newBalance = $balance[0]->saldo + $request->jumlah;
+        // get user id via rekening
+        $userId = DB::table('rekenings')
+        ->where('no_rekening', '=', $request->no_rekening)
+        ->select('nasabah_id')
+        ->get();
+
+
+        DB::update('update rekenings set saldo = ? where no_rekening = ?', [
+            $newBalance,
+             $request->no_rekening
+        ]);
+
+        // insert data
+        $tunai = new Tunai;
+        $tunai->user_id =  $userId[0]->nasabah_id;
+        $tunai->jumlah = $request->jumlah;
+        $tunai->jenis_transaksi = 'Setor Tunai';
+        $tunai->save();
+
+        return redirect()->back()->with('success', 'Berhasil melakukan setor tunai');
+    }
     
 
     /**
