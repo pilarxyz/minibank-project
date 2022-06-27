@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
    
 class HomeController extends Controller
 {
@@ -45,6 +46,25 @@ class HomeController extends Controller
     {
         return view('userTransfer', [
             "title" => "Home"
+        ]);
+    }
+
+    public function mutasi()
+    {
+        $nasabah = new NasabahController;
+        $users = $nasabah->index();
+
+        $transfer = new TransferController;
+        $transfers = $transfer->getNasabahTransfer();
+        // dd($transfers, $users);
+        $tunai = new TunaiController;
+        $tunai_transfer = $tunai->getTunaiTransfer();
+
+        return view('userMutasi', [
+            "title" => "Home",
+            "users" => $users[0],
+            "transfers" => $transfers,  
+            "tunai_transfer" => $tunai_transfer
         ]);
     }
 

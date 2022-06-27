@@ -5,6 +5,7 @@ use App\Http\Controllers\ConfigAdminController;
 use App\Http\Controllers\CustomerServiceController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NasabahController;
 use App\Http\Controllers\TellerController;
 use App\Http\Controllers\TunaiController;
 use App\Models\ConfigAdmin;
@@ -38,6 +39,9 @@ All Normal Users Routes List
 Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/transfer', [HomeController::class, 'transfer'])->name('transfer');
+    Route::get('/mutasi', [HomeController::class, 'mutasi'])->name('mutasi');
+    Route::post('/user/transfer', [NasabahController::class, 'nasabahTransferSaldo'])->name('user.transfer');
+
 });
   
 /*------------------------------------------

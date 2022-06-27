@@ -31,56 +31,32 @@
         
         <!-- Begin Page Content -->
         {{-- <div class="container-fluid"> --}}
-            <div class="row">
-                <div class="col-12">
-                    <!-- Default Card Example -->
-                    <div class="card shadow mb-4 text-center">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Detail Account</h6>
-                        </div>
-                        <div class="card-body">
-                            <table class="table">
-                                <tr>
-                                    <th>Nama</th>
-                                    <th>Nomor Rekening</th>
-                                    <th>Jenis Rekening</th>
-                                    <th>Jumlah Saldo</th>
-                                </tr>
-                                <tr>
-                                    <td>{{$users->name}}</td>
-                                    <td>{{$users->no_rekening}}</td>
-                                    <td>{{$users->jenis_rekening}}</td>
-                                    <td>Rp{{$users->saldo}}</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-             <!-- DataTales Example -->
-             <div class="card shadow mb-4">
+            
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
                 <div class="card-header py-3 text-center">
-                    <h6 class="m-0 font-weight-bold text-primary">Nasabah Mutation</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Account Mutation</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>Nama Akun</th>
+                                    <th>Pengirim</th>
+                                    <th>Penerima</th>
                                     <th>Jenis Transaksi</th>
-                                    <th>Jumlah</th>
+                                    <th>Jumlah Transfer</th>
                                     <th>Tanggal</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($tunai_transfer as $tunai)
+                                @foreach($transfers as $transfer)
                                 <tr>
-                                    <td>{{$tunai->name}}</td>
-                                    <td>{{$tunai->jenis_transaksi}}</td>
-                                    <td>{{$tunai->jumlah}}</td>
-                                    <td>{{$tunai->created_at}}</td>
+                                    <td>{{$transfer->pengirim}}</td>
+                                    <td>{{$transfer->penerima}}</td>
+                                    <td>{{$transfer->pengirim != $users->name ? "Debit" : "Kredit" }}</td>
+                                    <td>{{$transfer->jumlah}}</td>
+                                    <td>{{$transfer->created_at}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -88,7 +64,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Default Card Example -->
             <!-- <div class="card shadow mb-4 text-center">
                 <div class="card-header py-3">

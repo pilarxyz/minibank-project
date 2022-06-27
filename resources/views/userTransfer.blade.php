@@ -2,12 +2,12 @@
 
 @section('container')
 
-    <!-- Balance Withdrawal -->
+    <!-- User Transfers -->
     <div class="card shadow mb-4 text-center">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Balance Withdrawal</h6>
+            <h6 class="m-0 font-weight-bold text-primary">User Transfers</h6>
         </div>
-        <form class="card-body" method="POST" action="{{ route('user.withdraw') }}">
+        <form class="card-body" method="POST" action="{{ route('user.transfer') }}">
             @csrf
             <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 navbar-search col-12">
                 <div class="row mb-4">

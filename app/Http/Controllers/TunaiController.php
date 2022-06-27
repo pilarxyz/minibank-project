@@ -82,7 +82,10 @@ class TunaiController extends Controller
         $tunai->save();
 
         return redirect()->back()->with('success', 'Berhasil melakukan setor tunai');
+
     }
+
+    
     
 
     /**
@@ -90,10 +93,11 @@ class TunaiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function creaate ()
     {
         //
     }
+        //
 
     /**
      * Store a newly created resource in storage.
