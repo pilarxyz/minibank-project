@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('nasabahs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constranted();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             // $table->foreign('name')->references('name')->on('users');
             // $table->foreign('email')->references('email')->on('users');
             $table->string('gender');

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('rekenings', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('nasabah_id')->constrained();
+            $table->foreignId('nasabah_id')->constrained()->onDelete('cascade');
             $table->string('no_rekening');
             $table->string('jenis_rekening');
             $table->string('saldo');

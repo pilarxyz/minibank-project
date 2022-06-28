@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('transfers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('pengirim_id')->constrained('nasabahs');
-            $table->foreignId('penerima_id')->constrained('nasabahs');
+            $table->foreignId('pengirim_id')->constrained('nasabahs')->onDelete('cascade');
+            $table->foreignId('penerima_id')->constrained('nasabahs')->onDelete('cascade');
             $table->string('jumlah');
             $table->timestamps();
         });

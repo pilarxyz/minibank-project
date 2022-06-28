@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('tunais', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            // foreign user_id on delete delete
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('jenis_transaksi');
             $table->string('jumlah');
             $table->timestamps();
